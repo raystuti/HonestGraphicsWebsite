@@ -4,56 +4,73 @@ This project is now organized so recurring page layout lives in one place and pa
 
 ## Core Files
 
-- `honest-graphics.html`
+- `html/honest-graphics.html`
   - Main landing page.
-- `styles.css`
+- `css/styles.css`
   - Main landing page styles.
-- `script.js`
+- `js/script.js`
   - Main landing page interactions (cursor, reveal, theme toggle).
-- `theme-toggle.js`
+- `js/theme-toggle.js`
   - Shared theme toggle module used by homepage and work pages.
+
+## Category Assets
+
+All category-page media is now grouped under:
+
+- `assets/categories/identity-design/`
+- `assets/categories/logo-design/`
+- `assets/categories/brochure-design/`
+- `assets/categories/social-media-design/`
+- `assets/categories/outdoor-design/`
+- `assets/categories/packaging-design/`
+
+Each category folder is labeled and keeps category-specific files like:
+
+- `thumb.jpg` (service-card/hero thumbnail)
+- `gallery/` (work images for that category)
+- `wall/` (logo wall images for logo category)
 
 ## Work Pages (Refactored)
 
-- `work-pages.css`
+- `css/work-pages.css`
   - Shared styling for all work detail pages.
-- `work-pages.js`
-  - Work-page behavior bootstrap (uses shared `theme-toggle.js`).
-- `work-pages-data.js`
+- `js/work-pages.js`
+  - Work-page behavior bootstrap (uses shared `js/theme-toggle.js`).
+- `js/work-pages-data.js`
   - Central content source for all work pages:
     - title
     - hero image
     - section copy
     - logo wall items
     - gallery items
-- `work-page-builder.js`
-  - Shared renderer that builds page markup from `work-pages-data.js`.
+- `js/work-page-builder.js`
+  - Shared renderer that builds page markup from `js/work-pages-data.js`.
 
 ## Page Shells
 
 These files are intentionally tiny and only declare which data key to load:
 
-- `work-identity-design.html` → `data-work-page="identity-design"`
-- `work-logo-design.html` → `data-work-page="logo-design"`
-- `work-brochure-design.html` → `data-work-page="brochure-design"`
-- `work-social-media-design.html` → `data-work-page="social-media-design"`
-- `work-outdoor-design.html` → `data-work-page="outdoor-design"`
-- `work-packaging-design.html` → `data-work-page="packaging-design"`
+- `html/work-identity-design.html` → `data-work-page="identity-design"`
+- `html/work-logo-design.html` → `data-work-page="logo-design"`
+- `html/work-brochure-design.html` → `data-work-page="brochure-design"`
+- `html/work-social-media-design.html` → `data-work-page="social-media-design"`
+- `html/work-outdoor-design.html` → `data-work-page="outdoor-design"`
+- `html/work-packaging-design.html` → `data-work-page="packaging-design"`
 
 ## How to Make Future Changes
 
 ### Update a Work Page's Content
 
-Edit `work-pages-data.js` only.
+Edit `js/work-pages-data.js` only.
 
 ### Change Work Page Layout/Markup Once for All
 
-Edit `work-page-builder.js`.
+Edit `js/work-page-builder.js`.
 
 ### Change Work Page Styling Once for All
 
-Edit `work-pages.css`.
+Edit `css/work-pages.css`.
 
 ### Change Main Homepage
 
-Edit `honest-graphics.html`, `styles.css`, and `script.js`.
+Edit `html/honest-graphics.html`, `css/styles.css`, and `js/script.js`.

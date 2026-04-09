@@ -44,8 +44,8 @@
     '<nav>' +
       '<a href="honest-graphics.html#home" class="nav-logo" aria-label="Honest Graphics Home">' +
         '<span class="logo-plate">' +
-          '<img src="assets/honest-logo-clean-light.png" alt="Honest Graphics logo" class="logo-img logo-img-light"/>' +
-          '<img src="assets/honest-logo-clean.png" alt="Honest Graphics logo" class="logo-img logo-img-dark"/>' +
+          '<img src="../assets/honest-logo-clean-light.png" alt="Honest Graphics logo" class="logo-img logo-img-light"/>' +
+          '<img src="../assets/honest-logo-clean.png" alt="Honest Graphics logo" class="logo-img logo-img-dark"/>' +
         '</span>' +
       '</a>' +
       '<ul class="nav-center">' +
