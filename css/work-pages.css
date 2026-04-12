@@ -1,4 +1,5 @@
 :root {
+  --font-brand: "Humanst521 BT", "Humanst 521 BT", "Humanist 521 BT", Arial, sans-serif;
   --bg:#f6f6f4;
   --bg-elev:#ffffff;
   --ink:#171717;
@@ -39,10 +40,14 @@ html, body {
   padding:0;
 }
 
+html, body, button, input, textarea, select, option {
+  font-family:var(--font-brand);
+}
+
 body {
   background:var(--bg);
   color:var(--ink);
-  font-family:'Inter', sans-serif;
+  font-family:var(--font-brand);
   line-height:1.5;
   transition:background .35s ease, color .35s ease;
 }
@@ -247,7 +252,7 @@ nav {
 .page-title {
   margin:0;
   color:#fff;
-  font-family:'DM Serif Display', serif;
+  font-family:var(--font-brand);
   letter-spacing:-.01em;
   font-size:clamp(36px, 6vw, 66px);
   line-height:1.04;
@@ -277,7 +282,7 @@ nav {
 
 .section-title {
   margin:0;
-  font-family:'DM Serif Display', serif;
+  font-family:var(--font-brand);
   font-size:clamp(30px, 4vw, 44px);
   line-height:1.1;
 }

@@ -53,28 +53,17 @@ window.HG_WORK_PAGES = {
     sectionNote: 'A glimpse of brand marks we have developed and deployed for production use.',
     backHref: 'honest-graphics.html#services',
     backLabel: 'Back to Proof In Practice',
-    logoWall: [
-      { src: '../assets/categories/logo-design/wall/logo-01.png', alt: 'Client logo 1' },
-      { src: '../assets/categories/logo-design/wall/logo-02.png', alt: 'Client logo 2' },
-      { src: '../assets/categories/logo-design/wall/logo-03.png', alt: 'Client logo 3' },
-      { src: '../assets/categories/logo-design/wall/logo-04.png', alt: 'Client logo 4' },
-      { src: '../assets/categories/logo-design/wall/logo-05.png', alt: 'Client logo 5' },
-      { src: '../assets/categories/logo-design/wall/logo-06.png', alt: 'Client logo 6' },
-      { src: '../assets/categories/logo-design/wall/logo-07.png', alt: 'Client logo 7' },
-      { src: '../assets/categories/logo-design/wall/logo-08.png', alt: 'Client logo 8' },
-      { src: '../assets/categories/logo-design/wall/logo-09.png', alt: 'Client logo 9' },
-      { src: '../assets/categories/logo-design/wall/logo-10.png', alt: 'Client logo 10' },
-      { src: '../assets/categories/logo-design/wall/logo-11.png', alt: 'Client logo 11' },
-      { src: '../assets/categories/logo-design/wall/logo-12.png', alt: 'Client logo 12' },
-      { src: '../assets/categories/logo-design/wall/logo-13.png', alt: 'Client logo 13' },
-      { src: '../assets/categories/logo-design/wall/logo-14.png', alt: 'Client logo 14' },
-      { src: '../assets/categories/logo-design/wall/logo-15.png', alt: 'Client logo 15' },
-      { src: '../assets/categories/logo-design/wall/logo-16.png', alt: 'Client logo 16' },
-      { src: '../assets/categories/logo-design/wall/logo-17.png', alt: 'Client logo 17' },
-      { src: '../assets/categories/logo-design/wall/logo-18.png', alt: 'Client logo 18' },
-      { src: '../assets/categories/logo-design/wall/logo-19.png', alt: 'Client logo 19' },
-      { src: '../assets/categories/logo-design/wall/logo-20.png', alt: 'Client logo 20' }
-    ],
+    logoWall: (function () {
+      var items = [];
+      for (var i = 1; i <= 59; i += 1) {
+        var number = i < 10 ? '0' + i : String(i);
+        items.push({
+          src: '../assets/categories/logo-design/wall/logo-' + number + '.png',
+          alt: 'Client logo ' + i
+        });
+      }
+      return items;
+    })(),
     gallery: [
       { src: '../assets/categories/logo-design/gallery/83.jpg', alt: 'Logo-led stationery design', tag: 'Logo In Use' },
       { src: '../assets/categories/logo-design/gallery/85.jpg', alt: 'Logo system in stationery application' },
