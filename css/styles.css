@@ -1,8 +1,9 @@
   /* ── THEME TOKENS ── */
   :root {
     --font-brand: "Humanst521 BT", "Humanst 521 BT", "Humanist 521 BT", Arial, sans-serif;
-    --orange: #E8601C;
-    --orange-h: #d4511a;
+    --orange: #EC671F;
+    --accent: #EC671F;
+    --orange-h: #EC671F;
 
     /* light */
     --bg:       #f9f7f4;
