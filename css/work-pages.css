@@ -16,23 +16,6 @@
   --hero-mask-2:rgba(18, 18, 18, .66);
 }
 
-[data-theme="dark"] {
-  --bg:#101010;
-  --bg-elev:#181818;
-  --ink:#f0efec;
-  --ink-2:#a09890;
-  --ink-3:#8b847b;
-  --ink-soft:#a8a8a2;
-  --line:#2e2e2c;
-  --border:#2e2e2c;
-  --accent:#EC671F;
-  --orange:#EC671F;
-  --orange-h:#EC671F;
-  --accent-ink:#EC671F;
-  --hero-mask:rgba(10, 10, 10, .58);
-  --hero-mask-2:rgba(10, 10, 10, .76);
-}
-
 * { box-sizing:border-box; }
 
 html, body {
@@ -91,10 +74,6 @@ nav {
   filter:contrast(1.01) saturate(1.02);
 }
 
-.logo-img-dark { display:none; }
-[data-theme="dark"] .logo-img-light { display:none; }
-[data-theme="dark"] .logo-img-dark { display:block; }
-
 .nav-center {
   display:flex;
   gap:36px;
@@ -120,61 +99,6 @@ nav {
   display:flex;
   align-items:center;
   gap:14px;
-}
-
-.theme-toggle {
-  width:42px;
-  height:24px;
-  border-radius:12px;
-  background:var(--border);
-  border:none;
-  cursor:pointer;
-  position:relative;
-  transition:background .3s;
-  flex-shrink:0;
-}
-
-.theme-toggle::after {
-  content:'';
-  position:absolute;
-  top:3px;
-  left:3px;
-  width:18px;
-  height:18px;
-  border-radius:50%;
-  background:var(--ink-2);
-  transition:transform .3s, background .3s;
-}
-
-[data-theme="dark"] .theme-toggle::after {
-  transform:translateX(18px);
-  background:var(--orange);
-}
-
-.theme-toggle-label {
-  width:18px;
-  height:18px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--ink-3);
-  user-select:none;
-  transition:color .25s ease;
-}
-
-.theme-toggle-label svg {
-  width:16px;
-  height:16px;
-  display:block;
-  stroke:currentColor;
-  fill:none;
-  stroke-width:1.8;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-[data-theme="dark"] .theme-toggle-label {
-  color:var(--orange);
 }
 
 .nav-cta {
@@ -385,7 +309,6 @@ nav {
 @media(max-width:920px) {
   nav { padding:0 20px; }
   .nav-center { display:none; }
-  .theme-toggle-label { display:none; }
   .gallery { grid-template-columns:repeat(2, minmax(0,1fr)); }
   .logo-wall { grid-template-columns:repeat(4, minmax(0,1fr)); }
 }

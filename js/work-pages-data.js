@@ -13,7 +13,7 @@ window.HG_WORK_PAGES = {
       { src: '../assets/categories/identity-design/gallery/81.jpg', alt: 'Identity design brand collaterals' },
       { src: '../assets/categories/identity-design/gallery/82.jpg', alt: 'Identity design letterhead and envelope set' },
       { src: '../assets/categories/identity-design/gallery/83.jpg', alt: 'Identity branding stationery mockup' },
-      { src: '../assets/categories/identity-design/gallery/84.jpg', alt: 'Identity design stationery set in dark mode background' },
+      { src: '../assets/categories/identity-design/gallery/84.jpg', alt: 'Identity design stationery set with deep contrast background' },
       { src: '../assets/categories/identity-design/gallery/85.jpg', alt: 'Identity brand collateral suite' },
       { src: '../assets/categories/identity-design/gallery/78.jpg', alt: 'Brand identity application across print materials' }
     ]
@@ -131,7 +131,7 @@ window.HG_WORK_PAGES = {
       { src: '../assets/categories/packaging-design/gallery/57.jpg', alt: 'Luxury packaging visual concept' },
       { src: '../assets/categories/packaging-design/gallery/58.jpg', alt: 'Printed cover and pack finish example' },
       { src: '../assets/categories/packaging-design/gallery/59.jpg', alt: 'Branded packaging presentation sample' },
-      { src: '../assets/categories/packaging-design/gallery/60.jpg', alt: 'Dark theme packaging print sample' },
+      { src: '../assets/categories/packaging-design/gallery/60.jpg', alt: 'High-contrast packaging print sample' },
       { src: '../assets/categories/packaging-design/gallery/64.jpg', alt: 'Luxury booklet package design' },
       { src: '../assets/categories/packaging-design/gallery/66.jpg', alt: 'Premium cover packaging concept' }
     ]

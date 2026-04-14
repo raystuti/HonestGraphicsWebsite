@@ -44,8 +44,7 @@
     '<nav>' +
       '<a href="honest-graphics.html#home" class="nav-logo" aria-label="Honest Graphics Home">' +
         '<span class="logo-plate">' +
-          '<img src="../assets/honest-logo-clean-light.png" alt="Honest Graphics logo" class="logo-img logo-img-light"/>' +
-          '<img src="../assets/honest-logo-clean.png" alt="Honest Graphics logo" class="logo-img logo-img-dark"/>' +
+          '<img src="../assets/honest-logo-clean-light.png" alt="Honest Graphics logo" class="logo-img"/>' +
         '</span>' +
       '</a>' +
       '<ul class="nav-center">' +
@@ -55,8 +54,6 @@
         '<li><a href="honest-graphics.html#contact">Contact</a></li>' +
       '</ul>' +
       '<div class="nav-right">' +
-        '<span class="theme-toggle-label" id="themeLabel" aria-hidden="true"></span>' +
-        '<button class="theme-toggle" id="themeBtn" aria-label="Toggle dark mode"></button>' +
         '<a href="tel:+919081590808" class="nav-cta nav-call" aria-label="Call Honest Graphics">' +
           '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
             '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.65 2.62a2 2 0 0 1-.45 2.11L8.1 9.67a16 16 0 0 0 6.23 6.23l1.22-1.21a2 2 0 0 1 2.11-.45c.84.31 1.72.53 2.62.65A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>' +

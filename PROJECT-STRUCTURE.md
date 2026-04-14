@@ -9,9 +9,7 @@ This project is now organized so recurring page layout lives in one place and pa
 - `css/styles.css`
   - Main landing page styles.
 - `js/script.js`
-  - Main landing page interactions (cursor, reveal, theme toggle).
-- `js/theme-toggle.js`
-  - Shared theme toggle module used by homepage and work pages.
+  - Main landing page interactions (cursor, reveal).
 
 ## Category Assets
 
@@ -34,8 +32,6 @@ Each category folder is labeled and keeps category-specific files like:
 
 - `css/work-pages.css`
   - Shared styling for all work detail pages.
-- `js/work-pages.js`
-  - Work-page behavior bootstrap (uses shared `js/theme-toggle.js`).
 - `js/work-pages-data.js`
   - Central content source for all work pages:
     - title

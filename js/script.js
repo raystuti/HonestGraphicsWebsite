@@ -20,16 +20,6 @@
     });
   });
 
-  // ── THEME TOGGLE
-  if (window.HGThemeToggle) {
-    window.HGThemeToggle.init({
-      buttonId: 'themeBtn',
-      labelId: 'themeLabel',
-      storageKey: 'hg-theme',
-      defaultTheme: 'dark'
-    });
-  }
-
   // ── SCROLL REVEAL
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
