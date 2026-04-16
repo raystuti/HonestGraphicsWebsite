@@ -113,27 +113,27 @@ window.HG_WORK_PAGES = {
   },
 
   'packaging-design': {
-    title: 'Packaging Design — Honest Graphics',
+    title: 'Event & Exhibition Branding — Honest Graphics',
     heroImage: '../assets/categories/packaging-design/thumb.jpg',
-    pageTitle: 'Packaging Design',
-    pageSub: 'Packaging-led visual systems with premium finishing direction, production specs, and on-shelf impact.',
-    sectionTitle: 'Packaging & Print Finishes',
-    sectionNote: 'Creative direction paired with practical print execution for premium delivery.',
+    pageTitle: 'Event & Exhibition Branding',
+    pageSub: 'Conference and exhibition collateral including brochures, banners, standees, and booth graphics designed for maximum on-ground impact.',
+    sectionTitle: 'Event Collateral & Exhibitions',
+    sectionNote: 'Creative direction and print-ready execution for high-visibility events and trade shows.',
     backHref: 'honest-graphics.html#services',
     backLabel: 'Back to Proof In Practice',
     gallery: [
-      { src: '../assets/categories/packaging-design/gallery/51.jpg', alt: 'Pack-style stacked print design', tag: 'Packaging' },
-      { src: '../assets/categories/packaging-design/gallery/52.jpg', alt: 'Branded printed packaging style sample' },
-      { src: '../assets/categories/packaging-design/gallery/53.jpg', alt: 'Custom printed package design' },
-      { src: '../assets/categories/packaging-design/gallery/54.jpg', alt: 'Compact branding package design' },
-      { src: '../assets/categories/packaging-design/gallery/55.jpg', alt: 'Premium print package style' },
-      { src: '../assets/categories/packaging-design/gallery/56.jpg', alt: 'Minimal packaging-style visual set' },
-      { src: '../assets/categories/packaging-design/gallery/57.jpg', alt: 'Luxury packaging visual concept' },
-      { src: '../assets/categories/packaging-design/gallery/58.jpg', alt: 'Printed cover and pack finish example' },
-      { src: '../assets/categories/packaging-design/gallery/59.jpg', alt: 'Branded packaging presentation sample' },
-      { src: '../assets/categories/packaging-design/gallery/60.jpg', alt: 'High-contrast packaging print sample' },
-      { src: '../assets/categories/packaging-design/gallery/64.jpg', alt: 'Luxury booklet package design' },
-      { src: '../assets/categories/packaging-design/gallery/66.jpg', alt: 'Premium cover packaging concept' }
+      { src: '../assets/categories/packaging-design/gallery/51.jpg', alt: 'Event brochure and print collateral sample', tag: 'Event Branding' },
+      { src: '../assets/categories/packaging-design/gallery/52.jpg', alt: 'Branded event communication visual' },
+      { src: '../assets/categories/packaging-design/gallery/53.jpg', alt: 'Conference-ready print collateral design' },
+      { src: '../assets/categories/packaging-design/gallery/54.jpg', alt: 'Exhibition communication layout sample' },
+      { src: '../assets/categories/packaging-design/gallery/55.jpg', alt: 'Premium event print collateral style' },
+      { src: '../assets/categories/packaging-design/gallery/56.jpg', alt: 'Minimal event branding visual set' },
+      { src: '../assets/categories/packaging-design/gallery/57.jpg', alt: 'High-impact exhibition branding concept' },
+      { src: '../assets/categories/packaging-design/gallery/58.jpg', alt: 'Printed event brochure and finish example' },
+      { src: '../assets/categories/packaging-design/gallery/59.jpg', alt: 'Branded event presentation sample' },
+      { src: '../assets/categories/packaging-design/gallery/60.jpg', alt: 'High-contrast conference branding sample' },
+      { src: '../assets/categories/packaging-design/gallery/64.jpg', alt: 'Event booklet and collateral design' },
+      { src: '../assets/categories/packaging-design/gallery/66.jpg', alt: 'Premium exhibition print concept' }
     ]
   }
 };

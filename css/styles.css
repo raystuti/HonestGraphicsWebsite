@@ -68,11 +68,11 @@
   }
   .logo-plate {
     display:inline-flex; align-items:center; justify-content:center;
-    height:58px; padding:0;
+    height:66px; padding:0;
     background:transparent; border:none; box-shadow:none;
   }
   .logo-img {
-    height:54px; width:auto; display:block;
+    height:62px; width:auto; display:block;
     filter:contrast(1.01) saturate(1.02);
   }
   .nav-center {
@@ -316,7 +316,11 @@
   }
 
   /* ── SERVICES ── */
-  #services { background:var(--bg); transition:background .35s; }
+  #services {
+    background:var(--bg);
+    padding-top:72px;
+    transition:background .35s;
+  }
   .svc-head {
     display:flex; justify-content:space-between; align-items:flex-end;
     margin-bottom:52px; gap:20px; flex-wrap:wrap;
@@ -345,11 +349,16 @@
     content:'';
     position:absolute;
     inset:0;
-    background-image:var(--svc-image);
-    background-size:cover;
-    background-position:center;
+    background-color:var(--svc-image-bg, var(--bg-alt));
+    background-image:
+      linear-gradient(162deg, rgba(43,42,41,.24) 0%, rgba(43,42,41,.12) 56%, rgba(43,42,41,.2) 100%),
+      var(--svc-image);
+    background-size:100% 100%, var(--svc-image-size, cover);
+    background-position:center, var(--svc-image-position, center);
+    background-repeat:no-repeat;
+    background-blend-mode:multiply, normal;
     opacity:.23;
-    filter:saturate(1.02) contrast(1.06);
+    filter:saturate(1.08) contrast(1.1) brightness(.94);
     transform:scale(1.01);
     transition:opacity .3s ease, transform .32s ease;
     z-index:0;
@@ -358,10 +367,12 @@
     content:'';
     position:absolute;
     inset:0;
-    background:linear-gradient(165deg, color-mix(in srgb, var(--surface) 8%, transparent) 0%, color-mix(in srgb, var(--surface) 72%, transparent) 52%, color-mix(in srgb, var(--surface) 88%, transparent) 100%);
+    background:
+      linear-gradient(165deg, color-mix(in srgb, var(--surface) 24%, transparent) 0%, color-mix(in srgb, var(--surface) 76%, transparent) 52%, color-mix(in srgb, var(--surface) 92%, transparent) 100%),
+      radial-gradient(circle at 88% 16%, color-mix(in srgb, var(--orange) 12%, transparent) 0%, transparent 42%);
     z-index:1;
   }
-  .svc:hover::before { opacity:.4; transform:scale(1.055); }
+  .svc:hover::before { opacity:.42; transform:scale(1.055); }
   .svc:hover { background:var(--bg-alt); }
   .svc:hover .svc-num { color:var(--orange); }
   .svc > * { position:relative; z-index:2; }
@@ -699,6 +710,7 @@
     #home { grid-template-columns:1fr; padding:90px 20px 16px; gap:30px; min-height:680px; }
     .hero-photo { background-position:center 49%; }
     section { padding:72px 20px; }
+    #services { padding-top:50px; }
     #clients { padding:48px 20px; }
     .logo-marquee-track { gap:16px; }
     .client-logo-img { width:106px; height:56px; }
