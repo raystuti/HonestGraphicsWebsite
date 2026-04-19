@@ -332,9 +332,9 @@
     transition:background .35s, border-color .35s;
   }
   .svc {
-    background:var(--surface); padding:30px 26px 52px;
+    background:var(--surface); padding:28px 26px 52px;
     position:relative; overflow:hidden; isolation:isolate;
-    transition:background .25s;
+    transition:background .25s, transform .24s ease, box-shadow .24s ease, z-index .02s linear;
   }
   .svc-link {
     display:block;
@@ -372,9 +372,14 @@
       radial-gradient(circle at 88% 16%, color-mix(in srgb, var(--orange) 12%, transparent) 0%, transparent 42%);
     z-index:1;
   }
-  .svc:hover::before { opacity:.42; transform:scale(1.055); }
-  .svc:hover { background:var(--bg-alt); }
-  .svc:hover .svc-num { color:var(--orange); }
+  .svc:is(:hover, .svc-active)::before { opacity:.42; transform:scale(1.055); }
+  .svc:is(:hover, .svc-active) {
+    background:var(--bg-alt);
+    transform:translateY(-6px) scale(1.01);
+    box-shadow:0 16px 28px rgba(43,42,41,.16);
+    z-index:5;
+  }
+  .svc:is(:hover, .svc-active) .svc-num { color:var(--orange); }
   .svc > * { position:relative; z-index:2; }
   .svc-num {
     font-size:11px; font-weight:600; letter-spacing:.1em;
@@ -383,35 +388,15 @@
   }
   .svc-name {
     font-family:var(--font-brand);
-    font-size:17px; color:var(--ink); margin-bottom:8px;
+    font-size:17px; color:var(--ink); margin-bottom:9px;
     transition:color .35s;
   }
-  .svc-desc { font-size:13px; color:var(--ink-2); line-height:1.65; transition:color .35s; }
-  .svc-roll {
-    margin-top:13px;
-    max-height:0;
-    opacity:0;
-    overflow:hidden;
-    transform:translateY(8px);
-    transition:max-height .35s ease, opacity .28s ease, transform .28s ease;
-  }
-  .svc:hover .svc-roll {
-    max-height:140px;
-    opacity:1;
-    transform:translateY(0);
-  }
-  .svc-meta {
-    font-size:10.5px;
-    font-weight:600;
-    letter-spacing:.1em;
-    text-transform:uppercase;
-    color:var(--orange);
-    margin-bottom:6px;
-  }
-  .svc-outcome {
-    font-size:12px;
+  .svc-desc {
+    font-size:13px;
     color:var(--ink-2);
-    line-height:1.6;
+    line-height:1.58;
+    transition:color .35s;
+    max-width:34ch;
   }
   .svc-arr {
     position:absolute; right:22px; bottom:22px;
@@ -419,19 +404,9 @@
     background:var(--border); display:flex; align-items:center; justify-content:center;
     transition:background .22s, transform .22s;
   }
-  .svc:hover .svc-arr { background:var(--orange); transform:translate(2px,-2px); }
+  .svc:is(:hover, .svc-active) .svc-arr { background:var(--orange); transform:translate(2px,-2px); }
   .svc-arr svg { transition:stroke .22s; }
-  .svc:hover .svc-arr svg { stroke:#fff; }
-  .svc-highlight {
-    background:var(--orange) !important;
-  }
-  .svc-highlight .svc-num { color:rgba(255,255,255,.35) !important; }
-  .svc-highlight .svc-name { color:#fff !important; }
-  .svc-highlight .svc-desc { color:rgba(255,255,255,.7) !important; }
-  .svc-highlight .svc-meta { color:rgba(255,255,255,.9) !important; }
-  .svc-highlight .svc-outcome { color:rgba(255,255,255,.78) !important; }
-  .svc-highlight .svc-arr { background:rgba(255,255,255,.2) !important; }
-
+  .svc:is(:hover, .svc-active) .svc-arr svg { stroke:#fff; }
   /* ── CLIENTS ── */
   #clients {
     background:var(--bg-alt);
@@ -715,12 +690,6 @@
     .logo-marquee-track { gap:16px; }
     .client-logo-img { width:106px; height:56px; }
     .svc-grid { grid-template-columns:1fr 1fr; }
-    .svc-roll {
-      max-height:none;
-      opacity:1;
-      transform:none;
-      margin-top:12px;
-    }
     #about { grid-template-columns:1fr; gap:44px; }
     .contact-grid { grid-template-columns:1fr; gap:44px; }
     .contact-right { align-self:stretch; }

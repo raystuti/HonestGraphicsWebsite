@@ -27,3 +27,22 @@
     });
   }, { threshold: 0.07 });
   document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+
+  // ── SERVICES HOVER (single active card)
+  const svcCards = Array.from(document.querySelectorAll('.svc-grid .svc'));
+  if (svcCards.length) {
+    const setActiveCard = (activeCard) => {
+      svcCards.forEach(card => card.classList.toggle('svc-active', card === activeCard));
+    };
+
+    svcCards.forEach(card => {
+      card.addEventListener('mouseenter', () => setActiveCard(card));
+      card.addEventListener('mouseleave', () => card.classList.remove('svc-active'));
+      card.addEventListener('focusin', () => setActiveCard(card));
+      card.addEventListener('focusout', (event) => {
+        if (!card.contains(event.relatedTarget)) {
+          card.classList.remove('svc-active');
+        }
+      });
+    });
+  }
