@@ -58,7 +58,7 @@ window.HG_WORK_PAGES = {
       for (var i = 1; i <= 59; i += 1) {
         var number = i < 10 ? '0' + i : String(i);
         items.push({
-          src: '../assets/categories/logo-design/wall/logo-' + number + '.png',
+          src: '../assets/wall/brandsworkedwith/logo-' + number + '.png',
           alt: 'Client logo ' + i
         });
       }
