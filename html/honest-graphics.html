@@ -179,17 +179,24 @@
       var track = document.getElementById('clientsMarqueeTrack');
       if (!track) return;
       var loops = 2;
-      var count = 59;
+      var logoIds = [];
+      for (var i = 1; i <= 59; i += 1) {
+        if (i === 15) continue;
+        logoIds.push(i);
+      }
       for (var loop = 0; loop < loops; loop += 1) {
-        for (var i = 1; i <= count; i += 1) {
-          var number = i < 10 ? '0' + i : String(i);
+        for (var idx = 0; idx < logoIds.length; idx += 1) {
+          var number = logoIds[idx] < 10 ? '0' + logoIds[idx] : String(logoIds[idx]);
+          var slot = document.createElement('div');
+          slot.className = 'client-logo-slot';
           var img = document.createElement('img');
-          img.src = '../assets/categories/logo-design/wall/logo-' + number + '.png';
+          img.src = '../assets/wall/brandsworkedwith/logo-' + number + '.png';
           img.alt = 'Client brand logo';
           img.className = 'client-logo-img';
           img.loading = 'lazy';
           img.decoding = 'async';
-          track.appendChild(img);
+          slot.appendChild(img);
+          track.appendChild(slot);
         }
       }
     })();
