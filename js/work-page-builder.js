@@ -26,6 +26,7 @@
   };
 
   const renderGallery = function (items) {
+    if (!items || !items.length) return '';
     let markup = '<div class="gallery">';
     for (let i = 0; i < items.length; i += 1) {
       const item = items[i];

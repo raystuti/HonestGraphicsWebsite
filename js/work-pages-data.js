@@ -43,30 +43,15 @@ window.HG_WORK_PAGES = {
 
   'logo-design': {
     title: 'Logo Design — Honest Graphics',
-    heroImage: '../assets/categories/logo-design/thumb.jpg',
+    heroImage: '../assets/categories/logo-design/earth-euphoria.png',
     pageTitle: 'Logo Design',
-    pageSub: 'Memorable marks engineered for real use across hoardings, social creatives, brochures, packaging, and business stationery.',
-    sectionTitle: 'Logo Applications',
-    sectionNote: 'A glimpse of brand marks we have developed and deployed for production use.',
+    pageSub: 'Logo design portfolio will be updated soon.',
+    sectionTitle: '',
+    sectionNote: '',
     backHref: 'honest-graphics.html#services',
     backLabel: 'Back to Proof In Practice',
-    logoWall: (function () {
-      var items = [];
-      for (var i = 1; i <= 59; i += 1) {
-        var number = i < 10 ? '0' + i : String(i);
-        items.push({
-          src: '../assets/wall/brandsworkedwith/logo-' + number + '.png',
-          alt: 'Client logo ' + i
-        });
-      }
-      return items;
-    })(),
-    gallery: [
-      { src: '../assets/categories/logo-design/gallery/83.jpg', alt: 'Logo-led stationery design', tag: 'Logo In Use' },
-      { src: '../assets/categories/logo-design/gallery/85.jpg', alt: 'Logo system in stationery application' },
-      { src: '../assets/categories/logo-design/gallery/78.jpg', alt: 'Brand mark deployment across print collaterals' },
-      { src: '../assets/categories/logo-design/gallery/80.jpg', alt: 'Identity toolkit featuring logo applications' }
-    ]
+    logoWall: [],
+    gallery: []
   },
 
   'social-media-design': {
