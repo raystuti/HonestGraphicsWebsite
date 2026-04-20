@@ -4,18 +4,15 @@ window.HG_WORK_PAGES = {
     heroImage: '../assets/categories/identity-design/thumb.jpg',
     pageTitle: 'Identity Design',
     pageSub: 'From visual direction to final printed assets, we create coherent identities that feel premium and stay consistent everywhere.',
-    sectionTitle: 'Selected Identity Systems',
-    sectionNote: 'Each piece is built with both brand clarity and print execution in mind.',
+    sectionTitle: '',
+    sectionNote: '',
     backHref: 'honest-graphics.html#services',
     backLabel: 'Back to Proof In Practice',
     gallery: [
       { src: '../assets/categories/identity-design/gallery/80.jpg', alt: 'Identity design stationery project', tag: 'Identity' },
-      { src: '../assets/categories/identity-design/gallery/81.jpg', alt: 'Identity design brand collaterals' },
       { src: '../assets/categories/identity-design/gallery/82.jpg', alt: 'Identity design letterhead and envelope set' },
       { src: '../assets/categories/identity-design/gallery/83.jpg', alt: 'Identity branding stationery mockup' },
-      { src: '../assets/categories/identity-design/gallery/84.jpg', alt: 'Identity design stationery set with deep contrast background' },
-      { src: '../assets/categories/identity-design/gallery/85.jpg', alt: 'Identity brand collateral suite' },
-      { src: '../assets/categories/identity-design/gallery/78.jpg', alt: 'Brand identity application across print materials' }
+      { src: '../assets/categories/identity-design/gallery/84.jpg', alt: 'Identity design stationery set with deep contrast background' }
     ]
   },
 

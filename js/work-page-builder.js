@@ -30,12 +30,21 @@
     for (let i = 0; i < items.length; i += 1) {
       const item = items[i];
       markup += '<a class="gallery-item" href="' + item.src + '" target="_blank" rel="noopener noreferrer">';
-      markup += '<img src="' + item.src + '" alt="' + item.alt + '"/>';
+      markup += '<img src="' + item.src + '" alt="' + item.alt + '" onerror="this.parentElement.remove()"/>';
       if (item.tag) {
         markup += '<span class="gallery-tag">' + item.tag + '</span>';
       }
       markup += '</a>';
     }
+    markup += '</div>';
+    return markup;
+  };
+
+  const renderSectionHead = function (title, note) {
+    if (!title && !note) return '';
+    let markup = '<div class="section-head">';
+    if (title) markup += '<h2 class="section-title">' + title + '</h2>';
+    if (note) markup += '<p class="section-note">' + note + '</p>';
     markup += '</div>';
     return markup;
   };
@@ -75,10 +84,10 @@
 
     '<main class="page-main">' +
       '<section>' +
-        '<div class="section-head">' +
-          '<h2 class="section-title">' + page.sectionTitle + '</h2>' +
-          '<p class="section-note">' + page.sectionNote + '</p>' +
-        '</div>' +
+        renderSectionHead(
+          key === 'identity-design' ? '' : page.sectionTitle,
+          key === 'identity-design' ? '' : page.sectionNote
+        ) +
         renderLogoWall(page.logoWall) +
         renderGallery(page.gallery) +
         '<a class="footer-back" href="' + page.backHref + '">' + page.backLabel + '</a>' +
