@@ -1,4 +1,18 @@
 (function () {
+  const siteConfig = window.HG_SITE_CONFIG || {};
+  const navConfig = siteConfig.nav || {};
+  const contactConfig = siteConfig.contact || {};
+
+  const navLinks = navConfig.links || [
+    { label: 'Work', href: 'honest-graphics.html#services' },
+    { label: 'Clients', href: 'honest-graphics.html#clients' },
+    { label: 'About', href: 'honest-graphics.html#about' },
+    { label: 'Contact', href: 'honest-graphics.html#contact' }
+  ];
+  const navHomeHref = navConfig.homeHref || 'honest-graphics.html#home';
+  const callPrimaryTel = contactConfig.callPrimaryTel || '+919081590808';
+  const workSectionHref = (navLinks[0] && navLinks[0].href) || 'honest-graphics.html#services';
+
   const root = document.getElementById('workPageRoot');
   const key = document.body.dataset.workPage;
   const pages = window.HG_WORK_PAGES || {};
@@ -7,7 +21,7 @@
   if (!root) return;
 
   if (!page) {
-    root.innerHTML = '<main class="page-main"><section><h1 class="section-title">Page Not Found</h1><p class="section-note">This work page configuration is missing.</p><a class="footer-back" href="honest-graphics.html#services">Back to Proof In Practice</a></section></main>';
+    root.innerHTML = '<main class="page-main"><section><h1 class="section-title">Page Not Found</h1><p class="section-note">This work page configuration is missing.</p><a class="footer-back" href="' + workSectionHref + '">Back to Proof In Practice</a></section></main>';
     return;
   }
 
@@ -50,21 +64,26 @@
     return markup;
   };
 
+  const renderNavLinks = function () {
+    let markup = '';
+    for (let i = 0; i < navLinks.length; i += 1) {
+      markup += '<li><a href="' + navLinks[i].href + '">' + navLinks[i].label + '</a></li>';
+    }
+    return markup;
+  };
+
   root.innerHTML = '' +
     '<nav>' +
-      '<a href="honest-graphics.html#home" class="nav-logo" aria-label="Honest Graphics Home">' +
+      '<a href="' + navHomeHref + '" class="nav-logo" aria-label="Honest Graphics Home">' +
         '<span class="logo-plate">' +
           '<img src="../assets/honest-logo-clean-light.png" alt="Honest Graphics logo" class="logo-img"/>' +
         '</span>' +
       '</a>' +
       '<ul class="nav-center">' +
-        '<li><a href="honest-graphics.html#services">Work</a></li>' +
-        '<li><a href="honest-graphics.html#clients">Clients</a></li>' +
-        '<li><a href="honest-graphics.html#about">About</a></li>' +
-        '<li><a href="honest-graphics.html#contact">Contact</a></li>' +
+        renderNavLinks() +
       '</ul>' +
       '<div class="nav-right">' +
-        '<a href="tel:+919081590808" class="nav-cta nav-call" aria-label="Call Honest Graphics">' +
+        '<a href="tel:' + callPrimaryTel + '" class="nav-cta nav-call" aria-label="Call Honest Graphics">' +
           '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
             '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.65 2.62a2 2 0 0 1-.45 2.11L8.1 9.67a16 16 0 0 0 6.23 6.23l1.22-1.21a2 2 0 0 1 2.11-.45c.84.31 1.72.53 2.62.65A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>' +
             '<path d="M15.5 4.5a5 5 0 0 1 4 4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>' +

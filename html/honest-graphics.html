@@ -174,8 +174,6 @@
     <h2 class="process-title">Simple Process.<br/><em>Exceptional Results.</em></h2>
   </div>
 
-  <div class="process-divider reveal delay"></div>
-
   <div class="process-grid reveal delay">
     <article class="process-step">
       <div class="process-step-head">
@@ -408,10 +406,13 @@
   <img src="../assets/whatsapp-logo-4456.svg" alt="" aria-hidden="true"/>
 </a>
 
+<script src="../js/site-config.js"></script>
 <script>
   (function () {
     var warmed = false;
-    var pdfUrl = '../assets/honest-profile-2026.pdf';
+    var config = window.HG_SITE_CONFIG || {};
+    var profileConfig = config.profile || {};
+    var pdfUrl = profileConfig.pdfPath || '../assets/honest-profile-2026.pdf';
     var scriptUrls = [
       'https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js',
       'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js'

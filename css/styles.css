@@ -9,8 +9,8 @@
     --orange-h: #EC671F;
 
     /* light */
-    --bg:       #f9f7f4;
-    --bg-alt:   #f0ede8;
+    --bg:       #D9DADA;
+    --bg-alt:   #ececed;
     --surface:  #ffffff;
     --border:   #e2dcd6;
     --ink:      #111110;
@@ -19,7 +19,7 @@
 
     /* marquee / footer always dark */
     --bar-bg:   #111110;
-    --bar-fg:   #f9f7f4;
+    --bar-fg:   #f5f2ee;
     --btn-radius: 999px;
     --section-radius: 34px;
     --btn-shadow: 0 12px 24px rgba(43, 42, 41, .14);
@@ -120,7 +120,7 @@
     text-transform:uppercase; color:#0a0a0a; text-decoration:none;
     transition:color .2s;
   }
-  .nav-center a:hover { color:#ff4800; }
+  .nav-center a:hover { color:var(--orange); }
   .nav-right { display:flex; align-items:center; gap:10px; }
 
   /* ── BUTTON SYSTEM ── */
@@ -561,9 +561,6 @@
   }
   .process-title br {
     display:block;
-  }
-  .process-divider {
-    display:none;
   }
   .process-grid {
     display:grid;
@@ -1212,7 +1209,6 @@
     .svc-name { font-size:17px; }
     .svc-desc { font-size:10px; }
     .process-grid { grid-template-columns:1fr; gap:12px; margin-top:10px; }
-    .process-divider { margin-top:28px; margin-bottom:22px; }
     .process-title {
       font-size:clamp(26px, 9.2vw, 34px);
       max-width:none;

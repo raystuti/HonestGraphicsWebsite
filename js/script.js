@@ -1,3 +1,34 @@
+  var siteConfig = window.HG_SITE_CONFIG || {};
+  var navConfig = siteConfig.nav || {};
+  var contactConfig = siteConfig.contact || {};
+
+  function syncSharedTargets() {
+    var callPrimaryTel = contactConfig.callPrimaryTel || '+919081590808';
+    var officeWhatsappNumber = contactConfig.officeWhatsappNumber || '919081590808';
+    var quickQuoteEmail = contactConfig.quickQuoteEmail || 'Shreypatel3535@gmail.com';
+    var navLinks = navConfig.links || [];
+
+    document.querySelectorAll('.nav-call').forEach(function (link) {
+      link.setAttribute('href', 'tel:' + callPrimaryTel);
+    });
+
+    document.querySelectorAll('.wa-float').forEach(function (link) {
+      link.setAttribute('href', 'https://wa.me/' + officeWhatsappNumber);
+    });
+
+    var navAnchors = document.querySelectorAll('nav .nav-center a');
+    navAnchors.forEach(function (anchor, index) {
+      if (!navLinks[index]) return;
+      anchor.textContent = navLinks[index].label;
+      anchor.setAttribute('href', navLinks[index].href.replace('honest-graphics.html', ''));
+    });
+
+    var qqEmail = document.getElementById('qqEmail');
+    if (qqEmail) qqEmail.placeholder = quickQuoteEmail;
+  }
+
+  syncSharedTargets();
+
   // ── CURSOR
   const dot = document.getElementById('cDot');
   const ring = document.getElementById('cRing');
@@ -74,8 +105,8 @@
     const qqEmail = document.getElementById('qqEmail');
     const qqService = document.getElementById('qqService');
     const qqBrief = document.getElementById('qqBrief');
-    const targetWhatsappNumber = '919824385808';
-    const targetEmail = 'Shreypatel3535@gmail.com';
+    const targetWhatsappNumber = contactConfig.quickQuoteWhatsappNumber || '919824385808';
+    const targetEmail = contactConfig.quickQuoteEmail || 'Shreypatel3535@gmail.com';
 
     const fields = [qqName, qqPhone, qqEmail, qqService, qqBrief].filter(Boolean);
 

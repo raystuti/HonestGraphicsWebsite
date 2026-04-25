@@ -1,5 +1,10 @@
 (function () {
-  var PDF_PATH = '../assets/honest-profile-2026.pdf';
+  var siteConfig = window.HG_SITE_CONFIG || {};
+  var profileConfig = siteConfig.profile || {};
+  var contactConfig = siteConfig.contact || {};
+  var navConfig = siteConfig.nav || {};
+
+  var PDF_PATH = profileConfig.pdfPath || '../assets/honest-profile-2026.pdf';
   var WORKER_PATH = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
   var params = new URLSearchParams(window.location.search);
@@ -29,9 +34,24 @@
   var canvasByPdfPage = new Map();
 
   function fallbackHref() {
-    if (from === 'about') return 'honest-graphics.html#about';
-    if (from === 'footer') return 'honest-graphics.html#contact';
-    return 'honest-graphics.html#home';
+    var backAnchors = profileConfig.backAnchors || {};
+    if (from === 'about') return backAnchors.about || 'honest-graphics.html#about';
+    if (from === 'footer') return backAnchors.footer || 'honest-graphics.html#contact';
+    return backAnchors.default || navConfig.homeHref || 'honest-graphics.html#home';
+  }
+
+  function syncNavTargets() {
+    var navLinks = navConfig.links || [];
+    var callPrimaryTel = contactConfig.callPrimaryTel || '+919081590808';
+    var navCall = document.querySelector('.viewer-nav .nav-call');
+    if (navCall) navCall.setAttribute('href', 'tel:' + callPrimaryTel);
+
+    var navAnchors = document.querySelectorAll('.viewer-nav .nav-center a');
+    navAnchors.forEach(function (anchor, index) {
+      if (!navLinks[index]) return;
+      anchor.textContent = navLinks[index].label;
+      anchor.setAttribute('href', navLinks[index].href);
+    });
   }
 
   function setLoader(text) {
@@ -367,6 +387,7 @@
   }
 
   async function init() {
+    syncNavTargets();
     bindControls();
 
     if (!window.pdfjsLib) {
