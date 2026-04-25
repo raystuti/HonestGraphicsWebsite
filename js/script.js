@@ -75,7 +75,7 @@
     const qqService = document.getElementById('qqService');
     const qqBrief = document.getElementById('qqBrief');
     const targetWhatsappNumber = '919824385808';
-    const targetEmail = 'honestgraphicss@gmail.com';
+    const targetEmail = 'Shreypatel3535@gmail.com';
 
     const fields = [qqName, qqPhone, qqEmail, qqService, qqBrief].filter(Boolean);
 

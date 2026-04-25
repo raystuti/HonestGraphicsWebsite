@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 :root {
-  --font-brand: "Humanst521 BT", "Humanst 521 BT", "Humanist 521 BT", Arial, sans-serif;
+  --font-display: "Bebas Neue", sans-serif;
+  --font-brand: "Humanst521 BT", "Humanist521 BT", Frutiger, "Gill Sans", "Trebuchet MS", sans-serif;
   --ink: #2B2A29;
   --ink-2: #5a5650;
   --orange: #EC671F;
