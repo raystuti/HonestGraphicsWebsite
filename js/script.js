@@ -68,32 +68,6 @@
   }, { threshold: 0.07 });
   document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
 
-  // ── SERVICES HOVER (single active card + spotlight)
-  const svcGrid = document.querySelector('.svc-grid');
-  if (svcGrid) {
-    const svcCards = Array.from(svcGrid.querySelectorAll('.svc'));
-    svcCards.forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        svcGrid.classList.add('has-hover');
-        svcCards.forEach(c => c.classList.toggle('svc-active', c === card));
-      });
-      card.addEventListener('mouseleave', () => {
-        svcGrid.classList.remove('has-hover');
-        card.classList.remove('svc-active');
-      });
-      card.addEventListener('focusin', () => {
-        svcGrid.classList.add('has-hover');
-        svcCards.forEach(c => c.classList.toggle('svc-active', c === card));
-      });
-      card.addEventListener('focusout', e => {
-        if (!card.contains(e.relatedTarget)) {
-          svcGrid.classList.remove('has-hover');
-          card.classList.remove('svc-active');
-        }
-      });
-    });
-  }
-
   // ── QUICK QUOTE (user chooses channel)
   const qqForm = document.getElementById('quickQuoteForm');
   if (qqForm) {
