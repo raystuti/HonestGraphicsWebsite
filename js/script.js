@@ -20,6 +20,15 @@
     });
   });
 
+  // ── NAV TOP MASK ON SCROLL
+  const bodyEl = document.body;
+  const updateNavScrollMask = () => {
+    if (!bodyEl) return;
+    bodyEl.classList.toggle('nav-scroll-mask', window.scrollY > 12);
+  };
+  updateNavScrollMask();
+  window.addEventListener('scroll', updateNavScrollMask, { passive:true });
+
   // ── SCROLL REVEAL
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
