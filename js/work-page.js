@@ -42,9 +42,9 @@
     },
     'work-logo-design': {
       title: 'Logo Design',
-      subtitle: 'Dedicated logo showcase will be added here as soon as assets are ready.',
-      folderPath: '',
-      files: []
+      subtitle: 'Distinct logo marks crafted for recognition across print, digital, and signage.',
+      folderPath: '../assets/work/Logo Design',
+      files: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png']
     }
   };
 
