@@ -3,133 +3,11 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Brochure Design — Blank Canvas</title>
-  <style>
-    :root {
-      --orange:#EC671F;
-      --ink:#111110;
-      --bg:#D9DADA;
-    }
-    * { box-sizing:border-box; }
-    html, body { margin:0; padding:0; }
-    body {
-      font-family:"Humanst521 BT","Humanist521 BT",Frutiger,"Gill Sans","Trebuchet MS",sans-serif;
-      background:var(--bg);
-      color:var(--ink);
-      min-height:180vh;
-    }
-    body::before {
-      content:'';
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      height:118px;
-      background:linear-gradient(to bottom, #D9DADA 0%, #D9DADA 74%, rgba(217,218,218,0) 100%);
-      opacity:0;
-      pointer-events:none;
-      z-index:490;
-      transition:opacity .22s ease;
-    }
-    body.nav-scroll-mask::before { opacity:1; }
-
-    nav {
-      position:fixed;
-      top:16px;
-      left:28px;
-      right:28px;
-      z-index:500;
-      background:#ffffff;
-      border-radius:999px;
-      border:none;
-      box-shadow:0 4px 24px rgba(0,0,0,.07);
-      height:64px;
-      padding:0 12px 0 32px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-    }
-    .nav-logo {
-      display:flex;
-      align-items:center;
-      text-decoration:none;
-    }
-    .logo-plate {
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      height:42px;
-    }
-    .logo-img {
-      height:36px;
-      width:auto;
-      display:block;
-      filter:contrast(1.01) saturate(1.02);
-    }
-    .nav-center {
-      display:flex;
-      gap:40px;
-      list-style:none;
-      align-items:center;
-      margin:0;
-      padding:0;
-    }
-    .nav-center a {
-      font-size:13px;
-      font-weight:500;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      text-decoration:none;
-      color:#0a0a0a;
-      transition:color .2s;
-    }
-    .nav-center a:hover { color:var(--orange); }
-    .nav-right { display:flex; align-items:center; }
-    .nav-call {
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      text-decoration:none;
-      text-transform:uppercase;
-      letter-spacing:.06em;
-      border-radius:999px;
-      background:var(--orange);
-      color:#fff;
-      border:1px solid transparent;
-      padding:12px 28px;
-      font-size:13px;
-      font-weight:600;
-      transition:background-color .2s ease;
-      white-space:nowrap;
-    }
-    .nav-call:hover { background:#0a0a0a; }
-    .nav-call svg { width:15px; height:15px; display:block; flex-shrink:0; }
-
-    .blank-space {
-      height:170vh;
-      width:100%;
-    }
-
-    @media(max-width:920px) {
-      nav {
-        top:12px;
-        left:18px;
-        right:18px;
-        height:60px;
-        padding:0 8px 0 18px;
-      }
-      .logo-plate { height:38px; }
-      .logo-img { height:32px; }
-      .nav-center { display:none; }
-      .nav-call {
-        padding:10px 20px;
-      }
-    }
-  </style>
+  <title>Brochure Design — Honest Graphics</title>
+  <link rel="stylesheet" href="../css/work-page.css"/>
 </head>
 <body>
-  <nav>
+  <nav class="viewer-nav">
     <a href="honest-graphics.html#home" class="nav-logo" aria-label="Honest Graphics Home">
       <span class="logo-plate">
         <img src="../assets/honest-logo-clean-light.png" alt="Honest Graphics logo" class="logo-img"/>
@@ -142,7 +20,7 @@
       <li><a href="honest-graphics.html#contact">Contact</a></li>
     </ul>
     <div class="nav-right">
-      <a href="tel:+919081590808" class="nav-call" aria-label="Call Honest Graphics">
+      <a href="tel:+919081590808" class="nav-cta nav-call" aria-label="Call Honest Graphics">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.65 2.62a2 2 0 0 1-.45 2.11L8.1 9.67a16 16 0 0 0 6.23 6.23l1.22-1.21a2 2 0 0 1 2.11-.45c.84.31 1.72.53 2.62.65A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M15.5 4.5a5 5 0 0 1 4 4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
@@ -153,34 +31,21 @@
     </div>
   </nav>
 
-  <div class="blank-space" aria-hidden="true"></div>
+  <main class="work-shell" data-work-page="work-brochure-design">
+    <div class="work-toolbar">
+      <button id="backBtn" class="back-btn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 12h12" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Back</span>
+      </button>
+    </div>
+
+    <section class="work-stage" aria-label="Brochure Design work page"></section>
+  </main>
 
   <script src="../js/site-config.js"></script>
-  <script>
-    (function () {
-      var bodyEl = document.body;
-      function updateNavScrollMask() {
-        bodyEl.classList.toggle('nav-scroll-mask', window.scrollY > 12);
-      }
-      updateNavScrollMask();
-      window.addEventListener('scroll', updateNavScrollMask, { passive:true });
-
-      var config = window.HG_SITE_CONFIG || {};
-      var navConfig = config.nav || {};
-      var contactConfig = config.contact || {};
-      var navLinks = navConfig.links || [];
-      var callPrimaryTel = contactConfig.callPrimaryTel || '+919081590808';
-
-      var navCall = document.querySelector('.nav-call');
-      if (navCall) navCall.setAttribute('href', 'tel:' + callPrimaryTel);
-
-      var navAnchors = document.querySelectorAll('nav .nav-center a');
-      navAnchors.forEach(function (anchor, index) {
-        if (!navLinks[index]) return;
-        anchor.textContent = navLinks[index].label;
-        anchor.setAttribute('href', navLinks[index].href);
-      });
-    })();
-  </script>
+  <script src="../js/work-page.js"></script>
 </body>
 </html>
