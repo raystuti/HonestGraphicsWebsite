@@ -1243,15 +1243,10 @@
       --nav-h: 60px;
       --anchor-offset: calc(var(--nav-h) + var(--nav-offset-top) + 10px);
     }
-    body::before {
-      display: none;
-    }
     nav {
-      position: sticky;
       top:max(8px, env(safe-area-inset-top));
-      left:auto;
-      right:auto;
-      margin:8px 10px 0;
+      left:clamp(8px, 2vw, 18px);
+      right:clamp(8px, 2vw, 18px);
       padding:0 8px 0 18px;
       height:60px;
     }
@@ -1337,7 +1332,6 @@
   }
   @media(max-width:520px){
     nav {
-      margin:8px 8px 0;
       padding:0 6px 0 12px;
       height:56px;
     }
@@ -1377,7 +1371,8 @@
 
   @media(max-width:390px){
     nav {
-      margin:8px 8px 0;
+      left:8px;
+      right:8px;
       padding:0 6px 0 10px;
       height:54px;
     }
