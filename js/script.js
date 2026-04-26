@@ -1,6 +1,40 @@
   var siteConfig = window.HG_SITE_CONFIG || {};
   var navConfig = siteConfig.nav || {};
   var contactConfig = siteConfig.contact || {};
+  var loader = document.getElementById('hg-loader');
+  var body = document.body;
+  var DISPLAY_TIME = 2200;
+  var FADE_TIME = 700;
+  var didHideLoader = false;
+
+  function hideLoader() {
+    if (!loader || didHideLoader) return;
+    didHideLoader = true;
+    loader.classList.add('fade-out');
+    body.classList.remove('loading');
+    window.setTimeout(function () {
+      if (!loader) return;
+      loader.classList.add('hidden');
+      loader.setAttribute('aria-hidden', 'true');
+    }, FADE_TIME);
+  }
+
+  if (loader) {
+    loader.classList.remove('fade-out', 'hidden');
+    loader.removeAttribute('aria-hidden');
+    loader.style.display = '';
+    body.classList.add('loading');
+
+    if (document.readyState === 'complete') {
+      window.setTimeout(hideLoader, DISPLAY_TIME);
+    } else {
+      window.addEventListener('load', function () {
+        window.setTimeout(hideLoader, DISPLAY_TIME);
+      }, { once: true });
+    }
+
+    window.setTimeout(hideLoader, 5000);
+  }
 
   function syncSharedTargets() {
     var callPrimaryTel = contactConfig.callPrimaryTel || '+919081590808';
