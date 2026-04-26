@@ -16,7 +16,7 @@
       quickQuoteEmail: 'Shreypatel3535@gmail.com'
     },
     profile: {
-      pdfPath: '../assets/honest-profile-2026.pdf',
+      pdfPath: '../assets/HONEST PROFILE26.pdf',
       backAnchors: {
         about: 'honest-graphics.html#about',
         footer: 'honest-graphics.html#contact',

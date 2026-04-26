@@ -33,7 +33,13 @@
 
   <main class="flip-shell">
     <div class="flip-toolbar">
-      <button id="backBtn" class="back-btn" type="button">Back</button>
+      <button id="backBtn" class="back-btn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 12h12" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Back</span>
+      </button>
       <span class="toolbar-spacer" aria-hidden="true"></span>
     </div>
 
@@ -73,7 +79,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="../js/site-config.js"></script>
   <script src="../js/profile-viewer.js"></script>
 </body>
 </html>

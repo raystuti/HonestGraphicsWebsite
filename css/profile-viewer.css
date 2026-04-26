@@ -1,15 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
 :root {
-  --font-display: "Bebas Neue", sans-serif;
-  --font-brand: "Humanst521 BT", "Humanist521 BT", Frutiger, "Gill Sans", "Trebuchet MS", sans-serif;
+  --font-brand: "Humanst521 BT", "Humanst 521 BT", "Humanist 521 BT", Arial, sans-serif;
   --ink: #2B2A29;
   --ink-2: #5a5650;
   --orange: #EC671F;
   --bg: #D9DADA;
   --surface: #ffffff;
   --border: #d9dada;
-  --section-radius: 34px;
 }
 
 * { box-sizing: border-box; }
@@ -26,7 +22,8 @@ body {
 }
 
 body {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .viewer-nav {
@@ -44,6 +41,7 @@ body {
   border: none;
   border-radius: 999px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, .07);
+  transition: background .25s, box-shadow .25s;
 }
 
 .nav-logo {
@@ -63,11 +61,12 @@ body {
   height: 36px;
   width: auto;
   display: block;
+  filter: contrast(1.01) saturate(1.02);
 }
 
 .nav-center {
   display: flex;
-  gap: 36px;
+  gap: 40px;
   list-style: none;
   align-items: center;
   margin: 0;
@@ -77,9 +76,9 @@ body {
 .nav-center a {
   font-size: 13px;
   font-weight: 500;
-  letter-spacing: .09em;
+  letter-spacing: .08em;
   text-transform: uppercase;
-  color: var(--ink-2);
+  color: #0a0a0a;
   text-decoration: none;
   transition: color .2s;
 }
@@ -89,26 +88,28 @@ body {
 .nav-right {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .nav-cta {
   background: var(--orange);
   color: #fff;
-  border: none;
+  border: 1px solid transparent;
   padding: 12px 28px;
   border-radius: 999px;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: .06em;
+  text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  transition: transform .18s ease, box-shadow .22s ease;
+  transition: background-color .2s ease;
 }
 
 .nav-cta:hover {
+  background: #0a0a0a;
   transform: none;
   box-shadow: none;
-  background: #0a0a0a;
 }
 
 .nav-call {
@@ -127,7 +128,8 @@ body {
 }
 
 .flip-shell {
-  min-height: 100vh;
+  flex: 1 1 auto;
+  min-height: 0;
   padding: 88px 20px 14px;
   display: flex;
   flex-direction: column;
@@ -138,31 +140,40 @@ body {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-bottom: 8px;
 }
 
 .toolbar-spacer {
-  width: 70px;
-  height: 1px;
+  display: none;
 }
 
 .back-btn {
-  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid transparent;
   border-radius: 999px;
   background: var(--surface);
   color: var(--ink);
-  padding: 9px 14px;
+  margin-right: 28px;
+  padding: 12px 28px;
   font-family: var(--font-brand);
   font-size: 13px;
   font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: transform .18s ease, box-shadow .22s ease, background .22s ease, color .22s ease;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.back-btn svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
 }
 
 .back-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(43, 42, 41, .14);
   background: var(--orange);
   color: #fff;
 }
@@ -175,10 +186,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: var(--surface);
-  border-radius: var(--section-radius);
-  overflow: hidden;
-  padding: 8px;
+  background: var(--bg);
 }
 
 .book-host {
@@ -369,8 +377,8 @@ body {
 .flip-arrow {
   width: 50px;
   height: 58px;
-  border-radius: 22px;
-  border: none;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--ink) 16%, transparent);
   background: #fff;
   color: var(--ink);
   font-size: 30px;
@@ -380,12 +388,13 @@ body {
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 8px 18px rgba(43, 42, 41, .12);
-  transition: transform .18s ease, box-shadow .22s ease, background .22s ease, color .22s ease, opacity .22s ease;
+  transition: transform .18s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease, color .22s ease, opacity .22s ease;
 }
 
 .flip-arrow:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 24px rgba(43, 42, 41, .18);
+  border-color: color-mix(in srgb, var(--ink) 24%, transparent);
   background: #fff;
   color: var(--ink);
 }
@@ -407,7 +416,6 @@ body {
 }
 
 @media (max-width: 980px) {
-  :root { --section-radius: 22px; }
   .viewer-nav {
     top: 12px;
     left: 18px;
@@ -415,11 +423,11 @@ body {
     padding: 0 8px 0 18px;
     height: 60px;
   }
+
   .logo-plate { height: 38px; }
   .logo-img { height: 32px; }
-  .nav-call { padding: 10px 20px; }
   .nav-center { display: none; }
-  .flip-shell { padding: 76px 10px 10px; }
+  .nav-call { padding: 10px 20px; }
 
   .book-host {
     width: calc(100vw - 48px);

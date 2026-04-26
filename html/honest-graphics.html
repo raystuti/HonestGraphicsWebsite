@@ -407,45 +407,6 @@
 </a>
 
 <script src="../js/site-config.js"></script>
-<script>
-  (function () {
-    var warmed = false;
-    var config = window.HG_SITE_CONFIG || {};
-    var profileConfig = config.profile || {};
-    var pdfUrl = profileConfig.pdfPath || '../assets/honest-profile-2026.pdf';
-    var scriptUrls = [
-      'https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js',
-      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js'
-    ];
-
-    function addPrefetch(url, asType) {
-      var link = document.createElement('link');
-      link.rel = 'prefetch';
-      link.href = url;
-      if (asType) link.as = asType;
-      document.head.appendChild(link);
-    }
-
-    function warmFlipbookAssets() {
-      if (warmed) return;
-      warmed = true;
-
-      scriptUrls.forEach(function (url) {
-        addPrefetch(url, 'script');
-      });
-      addPrefetch(pdfUrl, 'fetch');
-
-      fetch(pdfUrl, { cache: 'force-cache' }).catch(function () {});
-    }
-
-    var profileLinks = document.querySelectorAll('a[href*="profile-viewer.html"]');
-    profileLinks.forEach(function (link) {
-      link.addEventListener('mouseenter', warmFlipbookAssets, { once: true });
-      link.addEventListener('focus', warmFlipbookAssets, { once: true });
-      link.addEventListener('touchstart', warmFlipbookAssets, { once: true, passive: true });
-    });
-  })();
-</script>
 
 <script src="../js/script.js"></script>
 </body>
