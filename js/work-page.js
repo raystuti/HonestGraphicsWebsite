@@ -7,13 +7,14 @@
   var shell = document.querySelector('.work-shell');
   var stage = document.querySelector('.work-stage');
   var slug = shell ? shell.getAttribute('data-work-page') : '';
+  var cacheBuster = String(Date.now());
 
   var WORK_PAGE_MAP = {
     'work-identity-design': {
       title: 'Identity Design',
       subtitle: 'Brand systems, applications, and identity-led visual language.',
       folderPath: '../assets/work/Identity Design',
-      files: ['1.png', '2.png', '3.jpg', '4.png', '5.png', '6.jpg']
+      files: ['1.png', '2.png', '3.jpg', '4.png', '5.jpg', '6.jpg']
     },
     'work-brochure-design': {
       title: 'Brochure Design',
@@ -37,7 +38,7 @@
       title: 'Event & Exhibition Branding',
       subtitle: 'Event collateral and environment graphics with brand continuity.',
       folderPath: '../assets/work/Event Collateral',
-      files: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg']
+      files: ['1.png', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg']
     },
     'work-logo-design': {
       title: 'Logo Design',
@@ -190,7 +191,7 @@
 
   function buildGrid(config) {
     var urls = config.files.map(function (file) {
-      return config.folderPath + '/' + file;
+      return config.folderPath + '/' + file + '?v=' + cacheBuster;
     });
 
     if (!urls.length) {
